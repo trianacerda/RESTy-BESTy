@@ -5,7 +5,7 @@ class RESTyContainer extends Component {
   render() {
     return (
       <>
-        <h1>RESTy Cotainer!</h1>
+        <h1>RESTy Container!</h1>
         <Controls />
       </>
     );

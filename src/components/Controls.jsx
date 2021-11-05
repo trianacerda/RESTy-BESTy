@@ -25,7 +25,7 @@ export default function Controls({
         onChange={onUrlChange}
         checked={onMethodChange}
       />
-      <label style={{ border: 'solid', color: 'teal' }}>GET</label>
+      <label style={{ border: 'solid', color: 'darkgoldenrod' }}>GET</label>
 
       <input
         type="radio"
@@ -45,7 +45,7 @@ export default function Controls({
         onChange={onUrlChange}
         checked={onMethodChange}
       />
-      <label style={{ border: 'solid', color: 'teal' }}>PUT</label>
+      <label style={{ border: 'solid', color: 'darkgoldenrod' }}>PUT</label>
 
       <input
         type="radio"
@@ -65,7 +65,7 @@ export default function Controls({
         onChange={onUrlChange}
         checked={onMethodChange}
       />
-      <label style={{ border: ' solid', color: 'teal' }}>DELETE</label>
+      <label style={{ border: ' solid', color: 'darkgoldenrod' }}>DELETE</label>
     </form>
   );
 }
