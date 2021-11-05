@@ -23,9 +23,9 @@ export default function Controls({
         name="method"
         value="get"
         onChange={onUrlChange}
-        checked="unchecked"
+        checked={onMethodChange}
       />
-      <label>GET</label>
+      <label style={{ border: 'solid', color: 'teal' }}>GET</label>
 
       <input
         type="radio"
@@ -33,39 +33,39 @@ export default function Controls({
         name="method"
         value="post"
         onChange={onUrlChange}
-        checked="unchecked"
+        checked={onMethodChange}
       />
-      <label>POST</label>
+      <label style={{ border: 'solid', color: 'teal' }}>POST</label>
 
       <input
         type="radio"
         id="put"
         name="method"
         value="put"
-        onChange={onMethodChange}
-        checked="unchecked"
+        onChange={onUrlChange}
+        checked={onMethodChange}
       />
-      <label>PUT</label>
+      <label style={{ border: 'solid', color: 'teal' }}>PUT</label>
 
       <input
         type="radio"
         id="post"
         name="method"
         value="post"
-        onChange={onMethodChange}
-        checked="unchecked"
+        onChange={onUrlChange}
+        checked={onMethodChange}
       />
-      <label>PATCH</label>
+      <label style={{ border: 'solid', color: 'teal' }}>PATCH</label>
 
       <input
         type="radio"
         id="delete"
         name="method"
         value="delete"
-        onChange={onMethodChange}
-        checked="unchecked"
+        onChange={onUrlChange}
+        checked={onMethodChange}
       />
-      <label>DELETE</label>
+      <label style={{ border: ' solid', color: 'teal' }}>DELETE</label>
     </form>
   );
 }
