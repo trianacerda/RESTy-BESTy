@@ -1,6 +1,8 @@
+import { response } from 'msw';
 import React, { Component } from 'react';
 import Controls from '../components/Controls';
 import CRUDHistory from '../components/CrudHistory';
+import JsonResponse from '../components/JsonResponse';
 
 class RESTyContainer extends Component {
   state = {
@@ -9,6 +11,7 @@ class RESTyContainer extends Component {
     url: '',
     json: '',
     crudRoutes: [],
+    response: [],
   };
 
   handleUrlChange = (e) => {
@@ -35,6 +38,7 @@ class RESTyContainer extends Component {
               method={method}
             />
             <CRUDHistory crudRoutes={crudRoutes} />
+            <JsonResponse response={response} />
           </>
         )}
       </>

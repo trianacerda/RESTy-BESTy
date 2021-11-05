@@ -1,10 +1,15 @@
-// example:
-// "root":[20 items
-//   0:{3 items
-//   "_id":"5da237699734fdcb7bef8f5c"
-//   "name":"Nancy"
-//   "image":"https://vignette.wikia.nocookie.net/heyarnold/images/6/62/Nancy.jpg/revision/latest/scale-to-width-down/310?cb=20110423055923"
-//   }
+import React from 'react';
+import ReactJson from 'react-json-view';
 
-//make this into json
-//
+export default function JsonResponse(response) {
+  return (
+    <div>
+      <label htmlFor="text-response" name="text-response">
+        FETCHED DATA:
+      </label>
+      <ReactJson src={response} id="text-response" name="text-response">
+        {response}
+      </ReactJson>
+    </div>
+  );
+}
