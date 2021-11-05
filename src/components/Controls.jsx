@@ -1,10 +1,10 @@
 import React from 'react';
 
 export default function Controls({
-  url,
   onSubmit,
   onUrlChange,
   onMethodChange,
+  json,
 }) {
   return (
     <form onSubmit={onSubmit}>
@@ -13,7 +13,6 @@ export default function Controls({
         title="url"
         text="text"
         placeholder="API URL"
-        value={url}
         onChange={onUrlChange}
       />
 
@@ -66,18 +65,15 @@ export default function Controls({
         checked={onMethodChange}
       />
       <label style={{ border: ' solid', color: 'darkgoldenrod' }}>DELETE</label>
+
+      <button aria-label="btn">Send!!</button>
+
+      <textarea
+        name="json-body"
+        value={json}
+        placeholder="Raw JSON Body"
+        onChange={onUrlChange}
+      ></textarea>
     </form>
   );
 }
-
-//form
-//label
-//url input -- text entry
-//radio btns -- actions/handlers
-//get
-//put
-//post
-//patch
-//delete
-//submit btn
-//raw JSON body -- text entry

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CRUDRoute({ method, url }) {
+export default function CRUDRoutes({ method, url }) {
   return (
     <article>
       <div>{method}</div>
