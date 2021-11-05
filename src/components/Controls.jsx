@@ -1,11 +1,6 @@
 import React from 'react';
 
-export default function Controls({
-  onSubmit,
-  onUrlChange,
-  onMethodChange,
-  json,
-}) {
+export default function Controls({ onSubmit, onUrlChange, method, json }) {
   return (
     <form onSubmit={onSubmit}>
       <input
@@ -22,9 +17,11 @@ export default function Controls({
         name="method"
         value="get"
         onChange={onUrlChange}
-        checked={onMethodChange}
+        checked={method === 'GET'}
       />
-      <label style={{ border: 'solid', color: 'darkgoldenrod' }}>GET</label>
+      <label htmlFor="get" style={{ border: 'solid', color: 'darkgoldenrod' }}>
+        GET
+      </label>
 
       <input
         type="radio"
@@ -32,9 +29,11 @@ export default function Controls({
         name="method"
         value="post"
         onChange={onUrlChange}
-        checked={onMethodChange}
+        checked={method === 'POST'}
       />
-      <label style={{ border: 'solid', color: 'teal' }}>POST</label>
+      <label htmlFor="post" style={{ border: 'solid', color: 'teal' }}>
+        POST
+      </label>
 
       <input
         type="radio"
@@ -42,19 +41,23 @@ export default function Controls({
         name="method"
         value="put"
         onChange={onUrlChange}
-        checked={onMethodChange}
+        checked={method === 'PUT'}
       />
-      <label style={{ border: 'solid', color: 'darkgoldenrod' }}>PUT</label>
+      <label htmlFor="put" style={{ border: 'solid', color: 'darkgoldenrod' }}>
+        PUT
+      </label>
 
       <input
         type="radio"
-        id="post"
+        id="patch"
         name="method"
-        value="post"
+        value="patch"
         onChange={onUrlChange}
-        checked={onMethodChange}
+        checked={method === 'PATCH'}
       />
-      <label style={{ border: 'solid', color: 'teal' }}>PATCH</label>
+      <label htmlFor="patch" style={{ border: 'solid', color: 'teal' }}>
+        PATCH
+      </label>
 
       <input
         type="radio"
@@ -62,9 +65,14 @@ export default function Controls({
         name="method"
         value="delete"
         onChange={onUrlChange}
-        checked={onMethodChange}
+        checked={method === 'DELETE'}
       />
-      <label style={{ border: ' solid', color: 'darkgoldenrod' }}>DELETE</label>
+      <label
+        htmlFor="delete"
+        style={{ border: ' solid', color: 'darkgoldenrod' }}
+      >
+        DELETE
+      </label>
 
       <button aria-label="btn">Send!!</button>
 

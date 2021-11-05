@@ -11,18 +11,32 @@ class RESTyContainer extends Component {
     crudRoutes: [],
   };
 
+  handleUrlChange = (e) => {
+    this.setState({ url: e.target.event });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ loading: true });
+  };
+
   render() {
     const { loading, method, url, json, crudRoutes } = this.state;
     return (
       <>
-        <h1>RESTy Container!</h1>
-        <Controls
-          json={json}
-          onSubmit={this.handleSubmit}
-          onUrlChange={this.handleUrlChange}
-          onMethodChange={this.handleMethodChange}
-        />
-        <CRUDHistory crudRoutes={crudRoutes} />
+        {loading ? (
+          <h1>Hang Tight BESTy-- RESTy is getting your results!</h1>
+        ) : (
+          <>
+            <Controls
+              json={json}
+              onSubmit={this.handleSubmit}
+              onUrlChange={this.handleUrlChange}
+              method={method}
+            />
+            <CRUDHistory crudRoutes={crudRoutes} />
+          </>
+        )}
       </>
     );
   }
