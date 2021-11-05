@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 class RESTyContainer extends Component {
   render() {
-    return <Controls />;
+    return (
+      <>
+        <h1>RESTy Cotainer!</h1>
+      </>
+    );
   }
 }
 
