@@ -27,7 +27,7 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         type="radio"
         id="post"
         name="method"
-        value="post"
+        value="POST"
         onChange={onUrlChange}
         checked={method === 'POST'}
       />
@@ -39,7 +39,7 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         type="radio"
         id="put"
         name="method"
-        value="put"
+        value="PUT"
         onChange={onUrlChange}
         checked={method === 'PUT'}
       />
@@ -51,7 +51,7 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         type="radio"
         id="patch"
         name="method"
-        value="patch"
+        value="PATCH"
         onChange={onUrlChange}
         checked={method === 'PATCH'}
       />
@@ -63,7 +63,7 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         type="radio"
         id="delete"
         name="method"
-        value="delete"
+        value="DELETE"
         onChange={onUrlChange}
         checked={method === 'DELETE'}
       />
