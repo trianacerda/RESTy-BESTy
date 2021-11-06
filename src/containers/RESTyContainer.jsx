@@ -32,6 +32,7 @@ class RESTyContainer extends Component {
         ) : (
           <>
             <Controls
+              url={url}
               json={json}
               onSubmit={this.handleSubmit}
               onUrlChange={this.handleUrlChange}
