@@ -15,7 +15,7 @@ class RESTyContainer extends Component {
   };
 
   handleUrlChange = (e) => {
-    this.setState({ url: e.target.event });
+    this.setState({ url: e.target.event, method: e.target.value });
   };
 
   handleSubmit = async (e) => {

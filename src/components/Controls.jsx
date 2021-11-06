@@ -15,7 +15,7 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         type="radio"
         id="get"
         name="method"
-        value="get"
+        value="GET"
         onChange={onUrlChange}
         checked={method === 'GET'}
       />
