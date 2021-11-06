@@ -1,8 +1,8 @@
-import { response } from 'msw';
 import React, { Component } from 'react';
 import Controls from '../components/Controls';
 import CRUDHistory from '../components/CrudHistory';
 import JsonResponse from '../components/JsonResponse';
+import { fetchUrl } from '../services/FetchUrl';
 
 class RESTyContainer extends Component {
   state = {
@@ -18,13 +18,25 @@ class RESTyContainer extends Component {
     this.setState({ url: e.target.event });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     this.setState({ loading: true });
+
+    const { method, url, json, crudRoutes } = this.state;
+
+    let response;
+    response = await fetchUrl(method, url, json);
+
+    this.setState({
+      loading: false,
+      crudRoutes: crudRoutes.includes(url)
+        ? crudRoutes
+        : [...crudRoutes, { method: method, url: url }],
+    });
   };
 
   render() {
-    const { loading, method, url, json, crudRoutes } = this.state;
+    const { loading, method, url, json, crudRoutes, response } = this.state;
     return (
       <>
         {loading ? (
