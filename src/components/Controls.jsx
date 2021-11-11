@@ -1,8 +1,13 @@
 import React from 'react';
 
-//red block = {lfjadfkadlkfj}
-
-export default function Controls({ onSubmit, onUrlChange, method, json }) {
+export default function Controls({
+  onSubmit,
+  onUrlChange,
+  onRadioChange,
+  method,
+  json,
+  url,
+}) {
   return (
     <form onSubmit={onSubmit}>
       <input
@@ -10,6 +15,7 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         title="url"
         text="text"
         placeholder="API URL"
+        value={url}
         onChange={onUrlChange}
       />
 
@@ -18,8 +24,8 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         id="get"
         name="method"
         value="GET"
-        onChange={onUrlChange}
-        checked={method === 'GET'}
+        onChange={onRadioChange}
+        // checked={method === 'GET'}
       />
       <label htmlFor="get" style={{ border: 'solid', color: 'darkgoldenrod' }}>
         GET
@@ -30,8 +36,8 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         id="post"
         name="method"
         value="POST"
-        onChange={onUrlChange}
-        checked={method === 'POST'}
+        onChange={onRadioChange}
+        // checked={method === 'POST'}
       />
       <label htmlFor="post" style={{ border: 'solid', color: 'teal' }}>
         POST
@@ -42,8 +48,8 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         id="put"
         name="method"
         value="PUT"
-        onChange={onUrlChange}
-        checked={method === 'PUT'}
+        onChange={onRadioChange}
+        // checked={method === 'PUT'}
       />
       <label htmlFor="put" style={{ border: 'solid', color: 'darkgoldenrod' }}>
         PUT
@@ -54,8 +60,8 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         id="patch"
         name="method"
         value="PATCH"
-        onChange={onUrlChange}
-        checked={method === 'PATCH'}
+        onChange={onRadioChange}
+        // checked={method === 'PATCH'}
       />
       <label htmlFor="patch" style={{ border: 'solid', color: 'teal' }}>
         PATCH
@@ -66,8 +72,8 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         id="delete"
         name="method"
         value="DELETE"
-        onChange={onUrlChange}
-        checked={method === 'DELETE'}
+        onChange={onRadioChange}
+        // checked={method === 'DELETE'}
       />
       <label
         htmlFor="delete"
@@ -82,7 +88,7 @@ export default function Controls({ onSubmit, onUrlChange, method, json }) {
         name="json-body"
         value={json}
         placeholder="Raw JSON Body"
-        onChange={onUrlChange}
+        onChange={onRadioChange}
       ></textarea>
     </form>
   );

@@ -1,4 +1,5 @@
-export const fetchUrl = async (method, url, body = null) => {
+export const fetchUrl = async ({ url, method, body = null }) => {
+  console.log('method:', method, 'url:', url, 'body:', body);
   const response = await fetch(url, {
     method,
     [body

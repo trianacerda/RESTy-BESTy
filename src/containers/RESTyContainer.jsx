@@ -15,7 +15,11 @@ class RESTyContainer extends Component {
   };
 
   handleUrlChange = (e) => {
-    this.setState({ url: e.target.event, method: e.target.value });
+    this.setState({ url: e.target.value });
+  };
+
+  handleRadioChange = (e) => {
+    this.setState({ method: e.target.value });
   };
 
   handleSubmit = async (e) => {
@@ -25,13 +29,14 @@ class RESTyContainer extends Component {
     const { method, url, json, crudRoutes } = this.state;
 
     let response;
-    response = await fetchUrl(method, url, json);
+    response = await fetchUrl({ url, method, json });
 
     this.setState({
       loading: false,
       crudRoutes: crudRoutes.includes(url)
         ? crudRoutes
         : [...crudRoutes, { method: method, url: url }],
+      response,
     });
   };
 
@@ -48,6 +53,7 @@ class RESTyContainer extends Component {
               json={json}
               onSubmit={this.handleSubmit}
               onUrlChange={this.handleUrlChange}
+              onRadioChange={this.handleRadioChange}
               method={method}
             />
             <CRUDHistory crudRoutes={crudRoutes} />
